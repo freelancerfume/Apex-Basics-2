@@ -2,6 +2,13 @@ public class Dinner {
     public Integer numberOfJuice;
     public String mealName;
     
+    public class Meal {
+        
+        public void starterMethod(){
+            system.debug('Fried Calamari');
+        }
+    }
+    
     public Dinner(){
         numberOfJuice = 2;
         mealName = 'Pizza';
