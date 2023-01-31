@@ -1,0 +1,1 @@
+SELECT Id, Phone, Company, LastName, FirstName, Website, City, Country FROM Lead LIMIT 10
