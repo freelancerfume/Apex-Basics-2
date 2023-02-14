@@ -12,13 +12,14 @@ public with sharing class accountLWCController {
     public accountLWCController() {
     }
     @AuraEnabled(cacheable=true)
-    public static List<Account> retrive(){
+    public static List<Account> retrive(String searchterm){
         List<Account> multiAcc = New List<Account>();
+        String search='%' + searchterm + '%';
         try {
             multiAcc = [SELECT Id, Name, Industry, Website, Phone 
-                        FROM Account 
-                        ORDER BY CreatedDate DESC                        
-                        LIMIT 10];
+                        FROM Account
+                        WHERE Name LIKE :search 
+                        ORDER BY CreatedDate DESC];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
