@@ -14,10 +14,20 @@
       <p class="slds-p-horizontal_small">
         <lightning-input type="text" label="Enter some text" value={searchText}
         onchange={textChangeHandler}></lightning-input>
-        <template if:true={accounts.data}>
-                <template for:each={accounts.data} for:item="account">
+        <template if:true={multiaccounts}>
+                <template for:each={multiaccounts} for:item="account">
                 
-                  <p key={account.Id}> {account.Name} - {account.Id} </p>
+                  
+                  <lightning-card  key={account.Id} variant="Narrow"  title={account.Name} 
+                  icon-name="standard:account">
+                    
+                    <p class="slds-p-horizontal_small">
+                        {account.Phone} <br />
+                        {account.Website} <br />
+                        {account.Industry} <br />
+                    </p>
+                    <p slot="footer">{account.Id}</p>
+                </lightning-card>
               
                 </template>
       </template>
