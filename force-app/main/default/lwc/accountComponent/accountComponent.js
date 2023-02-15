@@ -30,9 +30,19 @@ textChangeHandler(event){
     console.log('retrieved Accounts');
     console.log(data);
   this.multiaccounts=data;
+  // succesful apex method return
+        const succevt = new ShowToastEvent({
+          title: 'Success ',
+          message: 'Succesfully Searched' ,
+          variant: 'success',
+          mode: 'dismissable'
+      });
+      this.dispatchEvent(succevt);
   })
   .catch(err=>{
     console.log(err);
+    
+// error on  apex method return
     const errorevt = new ShowToastEvent({
           title: 'Error ',
           message: err ,
