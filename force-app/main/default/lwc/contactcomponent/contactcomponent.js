@@ -10,7 +10,7 @@ export default class Contactcomponent extends LightningElement {
   lastname=LASTNAME;
   phone=PHONE;
   email=EMAIL;
-  @api recordId;
+  @api recordId; // available for input FLOW // APEX public
   @api objectApiName;
   connectedCallback(){
     console.log('FIELDS :');
