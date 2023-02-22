@@ -7,4 +7,9 @@ export default class Lwc3 extends LightningElement {
         this.textValue = event.detail.value;
     }
 
+    handleButtonClick(event) {
+        alert("You resetted the name");
+        this.textValue = "User";
+    }
+
 }

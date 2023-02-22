@@ -2,19 +2,28 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 02-18-2023
+  @last modified on  : 02-22-2023
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card title="LWC 3" icon-name="custom:custom14"> 
+    <lightning-card title="LWC 3" icon-name="custom:custom14">
 
         <div class="slds-p-around_medium lgc-bg">
-            <lightning-input type="text" label="Enter your name" onchange={handleInputChange}></lightning-input>
+            <lightning-input 
+            type="text" 
+            label="Enter your name" 
+            onchange={handleInputChange}></lightning-input>
         </div>
-        <div>
-<p> Hello : {textValue}!</p>
+        <div class="slds-p-around_medium lgc-bg">
+            <p> Hello : {textValue}!</p>
+        </div>
+        <lightning-button 
+        variant="destructive" 
+        label="Reset" 
+        title="Reset" 
+        onclick={handleButtonClick} 
+        class="slds-m-left_x-small"></lightning-button>
 
 
-        </div>
     </lightning-card>
 </template>
