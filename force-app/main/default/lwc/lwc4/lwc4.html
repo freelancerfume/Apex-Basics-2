@@ -6,23 +6,74 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <div class="topnav">
-        <h1>LWC 4</h1>
-    </div>
+    <lightning-card title={Brand}>
 
-    <div class="content">
-        <img src={pictureURL}>
-    </div>
+        <div class="topnav">{Model}</div>
 
-    <div class="footer">
-        <div>Brand: {Brand}</div>
-        <div>Model: {Model}</div>
-        <div>Category: {Category}</div>
-        <div>Price: {Price}</div>
-        <div>Sleeps: {Sleeps}</div>
-        <div>Length: {Length}</div>
-    </div>
+        <div>
+            <lightning-carousel>
+                <lightning-carousel-image src={pictureURL} alternative-text="This is a card"></lightning-carousel-image>
+                <lightning-carousel-image src={pictureURL2}
+                    alternative-text="This is a card"></lightning-carousel-image>
+                <lightning-carousel-image src={pictureURL3}
+                    alternative-text="This is a card"></lightning-carousel-image> </lightning-carousel-image>
+            </lightning-carousel>
+        </div>
 
-    
+        <div>
+            <table class="slds-table slds-table_cell-buffer slds-table_header-hidden slds-table_bordered">
+                <tbody>
+                    <tr class="slds-hint-parent">
+                        <td data-label="Category">
+                            <div class="slds-truncate" title="Category">Category</div>
+                        </td>
+                        <td data-label="CategoryName">
+                            <div class="slds-truncate" title="Category Name">{Category}</div>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <td data-label="Price">
+                            <div class="slds-truncate" title="Price">Price</div>
+                        </td>
+                        <td data-label="PriceCost">
+                            <div class="slds-truncate" title="Price Cost">{Price}</div>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <td data-label="Sleeps">
+                            <div class="slds-truncate" title="Sleeps">Sleeps</div>
+                        </td>
+                        <td data-label="SleepsCount">
+                            <div class="slds-truncate" title="Sleeps">{Sleeps}</div>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <td data-label="Length">
+                            <div class="slds-truncate" title="Length">Length</div>
+                        </td>
+                        <td data-label="TrailerLength">
+                            <div class="slds-truncate" title="Length">{Length}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
+
+        <div class="slds-p-around_medium lgc-bg">
+
+            <lightning-input type="checkbox" name="loan" label="Loan Options" onchange={handleInputChange}>
+            </lightning-input>
+
+            <template if:true={areDetailsVisible}>
+            <p>Best Overall: <lightning-formatted-url value={loanURL1} tooltip="Best Overall" label="Alliant Credit Union" target="_blank"></lightning-formatted-url></p>
+            <p>Best for Bad Credit: <lightning-formatted-url value={loanURL2} tooltip="Best for Bad Credit" label="Southeast Financial" target="_blank"></lightning-formatted-url></p>
+            <p>Best for Good Credit: <lightning-formatted-url value={loanURL3} tooltip="Best for Good Credit" label="Bank of the West" target="_blank" ></lightning-formatted-url></p>
+            <p>Best for Quick Funding: <lightning-formatted-url value={loanURL4} tooltip="Best for Quick Funding" label="LightStream" target="_blank" ></lightning-formatted-url></p>
+            </template>
+
+        </div>
+
+
+    </lightning-card>
 </template>
