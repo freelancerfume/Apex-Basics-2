@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-23-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="LWC 9 (Custom Layout)"> 
+    <lightning-record-view-form
+    object-api-name={objectApiName}
+    record-id={recordId}
+>
+<div class="slds-grid slds-p-around_medium">
+    <div class="slds-col slds-size_1-of-2">
+        <lightning-output-field field-name="Name"> </lightning-output-field>
+        <lightning-output-field field-name="Phone">
+        </lightning-output-field>
+        <lightning-output-field field-name="Title">
+        </lightning-output-field>
+    </div>
+    <div class="slds-col slds-size_1-of-2">
+        <lightning-output-field field-name="Email">
+        </lightning-output-field>
+        <lightning-output-field field-name="Birthdate">
+        </lightning-output-field>
+        <lightning-output-field field-name="LeadSource">
+        </lightning-output-field>
+    </div>
+</div>
+
+</lightning-record-view-form>
+</lightning-card>
+</template>

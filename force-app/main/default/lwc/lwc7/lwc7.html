@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-23-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="LWC 7" icon-name="custom:custom15">
+        <ul class="slds-p-around_medium">
+            <template for:each={contactList} for:item="contact">
+                <li key={contact.Id}>
+                    {contact.Id}, {contact.Name}, {contact.Title}
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
