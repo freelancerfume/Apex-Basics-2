@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-24-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <!-- Rich text editor and formatted output -->
+    <lightning-input-rich-text
+        value={richtext}
+        label={richtextLabel}
+        onchange={handleChange}
+    ></lightning-input-rich-text>
+    <lightning-formatted-rich-text
+        value={richtext}
+    ></lightning-formatted-rich-text>
+</template>
