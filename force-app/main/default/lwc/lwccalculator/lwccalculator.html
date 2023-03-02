@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-02-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card variant="Narrow" title="LWC Calculator" icon-name="standard:constant">
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input onchange={handleNumberOneChange} type="string" name="num1" value={firstNum} label="First Number" placeholder="type here..."></lightning-input>
+            <lightning-input onchange={handleNumberTwoChange} type="string" name="num2" value={secondNum} label="Second Number" placeholder="type here..."></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg slds-align_absolute-center">
+            <lightning-button onclick={handleClickSum} icon-name="utility:add" class="slds-m-left_x-small"></lightning-button>
+            <lightning-button onclick={handleClickSub} icon-name="utility:dash" class="slds-m-left_x-small"></lightning-button>
+            <lightning-button onclick={handleClickMul} icon-name="utility:close" class="slds-m-left_x-small"></lightning-button>
+            <lightning-button onclick={handleClickDiv} icon-name="utility:percent" class="slds-m-left_x-small"></lightning-button>
+        </div>
+
+        <p slot="footer">Result: {result}</p>
+
+    </lightning-card>
+</template>
